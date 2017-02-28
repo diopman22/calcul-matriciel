@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title%}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/bootstrap/css/full-slider.css">
+        <link rel="stylesheet" href="/static/bootstrap/font-awesome-4.1.0/css/font-awesome.min.css">
+        <style type="text/css">
+            .in{
+                width: 70px;
+            }
+        </style>
+        <script src="/static/bootstrap/js/bootstrap.js"></script>
+        <script src="/static/bootstrap/js/jquery.min.js"></script>
+        <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            function doIt(x)
+            {
+                var i,j;
+                y=document.getElementById('ordre').value;
+                divi=document.getElementById('ici');
+                divi.innerHTML="<h5 class='text-info'>Saisissez les composantes de la matrice</h5>";
+                divi.innerHTML+="</br>";
+                for(var i=0;i<y;i++){
+                    for(var j=0;j<y;j++){
+                        divi.innerHTML+="<input type='number' class='in input-sm'required='' size='4' name='m"+i+j+"'>";
+                    
+                    }
+                    divi.innerHTML+="&nbsp;&nbsp;&nbsp;<input type='number'class='in input-sm'required='' size='4' name='c"+i+"'>";
+                divi.innerHTML+="</br>";
+                }
+                divi.innerHTML+="</br></br><button type='submit' id='result' name='result' class='btn btn-primary' value='resultat'><span class='glyphicon glyphicon-ok'></span>&nbsp;&nbsp;R&eacute;sultat</button>";
+            }
+        </script>
+    </head>
+
+    <body>
+
+		<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 <a class="navbar-brand">Calcul Numérique</a>	
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+		        <li class="active"><a href="/">Accueil</a></li>
+		        <li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Résolution Ax=b
+		          <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="{{('/gauss')}}">Gauss</a></li>
+		            <li><a href="/lu">LU</a></li>
+		            <li><a href="/cholesky">Cholesky</a></li>
+		            <li><a href="/qr">QR</a></li> 
+		          </ul>
+		        </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Méthodes de décomposition
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/lu_">LU</a></li>
+                    <li><a href="/cholesky_">Cholesky</a></li>
+                    <li><a href="/qr_">QR</a></li> 
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Autres
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{('/inverse')}}">Inverse</a></li>
+                    <li><a href="/det">Déterminant</a></li>
+                  </ul>
+                </li>
+		        <li><a href="/documentation">Documentation</a></li>
+		      </ul>
+            </div>            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+ <br><br>
+	{% block content%}	  
+	
+    {% endblock %}
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Mansour Baro DIOP</strong>
+                    </h4>
+                    <p>Etudiant en DIC 1<br>ECOLE SUPERIEURE POLYTECHNIQUE</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (+221) 77 816 04 09</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>diopman22@gmail.com</li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                        	<i class="fa fa-facebook fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+							<i class="fa fa-twitter fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-google-plus fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-instagram fa-fw fa-3x"></i>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Mansour 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="bootstrap/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 2000 //changes the speed
+        })
+    </script>
+    <script type="text/javascript">
+        $(function(){
+        $("div.alert").show("slow").delay(2000).hide("slow");
+        });
+     </script>
+    </body>
+</html>
+

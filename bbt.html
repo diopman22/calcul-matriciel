@@ -1,0 +1,141 @@
+<!doctype html>
+<!--[if lt IE 8 ]><html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="fr"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet Calcul Numerique</title>
+
+<!-- main JS libs  -->
+<script src="{{ url_for('static', filename='js/libs/jquery-1.11.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/libs/jquery-ui.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/libs/bootstrap.min.js') }}"></script>
+<script>
+function doIt(x)
+{
+var i,j,cpt=0;
+y=document.getElementById('textfield').value;
+divi=document.getElementById('ici');
+divi.innerHTML="</br> Saisissez les composantes de la matrice";
+divi.innerHTML+="</br></br>";
+for(var i=0;i<y;i++)
+{
+for(var j=0;j<y;j++)
+{
+divi.innerHTML+="<input type='number' required='' size='4' name="+cpt+">";
+cpt++;
+}
+divi.innerHTML+="</br>";
+}
+divi.innerHTML+="</br></br><input type='submit' value='Factoriser en BB(t)'>";
+}
+
+</script>
+
+<!-- Style CSS -->
+<link href="{{ url_for('static', filename='css/bootstrap.css') }}" media="screen" rel="stylesheet">
+<link href="{{ url_for('static', filename='style.css') }}" media="screen" rel="stylesheet">
+
+<!-- General Scripts -->
+<script src="{{ url_for('static', filename='js/general.js') }}"></script>
+
+<!--[if lt IE 9]>
+<script src="js/libs/html5shiv.js"></script>
+<script src="js/libs/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+<!--
+#apDiv1 {
+	position:absolute;
+	left:13px;
+	top:667px;
+	width:1061px;
+	height:195px;
+	z-index:1000;
+}
+-->
+</style>
+</head>
+
+<body>
+<div class="body-wrap">
+    <!-- container-->
+    <div class="container">
+
+	  <ul class="menu boxed clearfix bg-image-home">
+                        <li><a href="?x=1"><i class="menu-icon menu-icon-1"></i>DIC1 Informatique</a></li>
+                        <li><a href="?x=2"><i class="menu-icon menu-icon-5"></i>Cours de calcul numerique</a></li>
+                        <li><a href="?x=3"><i class="menu-icon menu-icon-5"></i>Inverse d'une Matrice</a></li>
+        				<li><a href="?x=4"><i class="menu-icon menu-icon-7"></i>Aide</a></li>
+                    </ul>
+<div class="post-tabs-content boxed">
+                            <!-- post item -->
+                            <div class="post-item style6 clearfix bg-image-arrow active">
+                                <div class="post-image"><a href="{{ url_for('static', filename='images/temp/post-img-11.jpg') }}" data-rel="prettyPhoto" title="Music"><img src="images/temp/post-img-11.jpg" alt="" /></a></div>
+                                <div class="post-content">
+                                    <h2 class="post-title">Dr Samuel Ouya</h2>
+                                    <h6 class="post-subtitle">Cours de Calcul numerique</h6>
+                                    <div class="post-desc">
+                                        <p>Ce site web réalisé en flask propose une interface ergonomique de traitement de matrices. En parcourant ce menu, vous devriez trouver votre bonheur, et parfois même des scripts dèjà réalisés. Bonne journée!</p>
+                                    </div>
+                                    <ul class="post-links-alt">
+                                        <li class="post-more"><a href="#">Afficher les scripts<i class="icon-small-next"></i></a></li>
+                                        <li class="post-refresh"><a href="#"><i class="icon-small-refresh"></i></a></li>
+                                        <li class="post-like"><a href="#" title="128 Likes"><i class="icon-small-like"></i></a></li>
+                                        <li class="post-comments"><a href="#" title="96 Comments"><i class="icon-small-comment"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+</div>
+    </div>
+    <!--/ container-->
+    
+                         <div align="center">
+                        <div class="widget-container widget-stats boxed boxed-transparent">
+                        <div class="stats-top">
+                            <h4 class="widget-title">Factorisation d'une matrice en B*B(t)</h4>
+                            <div class="widget-subtitle">
+                            <h6>SAISISSEZ LA TAILLE DE VOTRE MATRICE</h6>
+                              <form name="form1" method="post" action="res">
+                                <label>
+                                  <input type="number" min="2" max="6" name="textfield" id="textfield" onChange="doIt(this.value)">
+                                </label>
+                                <div id='ici'></div>
+                              </form>
+                            </div>
+                        </div>
+                        <div class="stats-content fade-effect">
+                            <div id="stats" class="carousel slide" data-interval="20000">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="active item">
+                                        <div id="graph-1" class="graph"></div>
+                                       
+                                        <div class="stats-tab-bottom clearfix">
+                                            <span class="artist">Réalisé avec</span>
+                                            <span class="position"><strong>F</strong><em>lask<br>& Bootstrap</em></span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div id="graph-3" class="graph"></div>
+                                        
+                                        <div class="stats-tab-bottom clearfix">
+                                            <span class="artist">Présenté par</span>
+                                            <span class="position"><strong>P</strong>apa Mamadou<em>Ndiaye<br></em></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="carousel-control left" href="#stats" data-slide="prev"></a>
+                                <a class="carousel-control right" href="#stats" data-slide="next"></a>
+                            </div>
+                        </div>
+                    </div></div>
+       
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% extends "page.html" %}
+{% block title%}Accueil{% endblock %}
+	{% block corps%}	  
+	<!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill"><img class="img-responsive" src="/static/images/img.png"></div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill"><img class="img-responsive" src="/static/images/img.png"></div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill"><img class="img-responsive" src="/static/images/img.png" ></div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill"><img class="img-responsive" src="/static/images/img.png"></div>
+            </div>
+        </div>
+		<!-- Left and right controls -->
+	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	      <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	      <span class="sr-only">Next</span>
+	    </a>
+    </header>
+{% endblock %}
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Mansour Baro DIOP</strong>
+                    </h4>
+                    <p>Etudiant en DIC 1<br>ECOLE SUPERIEURE POLYTECHNIQUE</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (+221) 77 816 04 09</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>diopman22@gmail.com</li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                        	<i class="fa fa-facebook fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+							<i class="fa fa-twitter fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-google-plus fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-instagram fa-fw fa-3x"></i>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Mansour 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="bootstrap/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 3000 //changes the speed
+    })
+    </script>
+
+    </body>
+</html>
+

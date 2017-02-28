@@ -1,0 +1,73 @@
+{% extends "page.html" %}
+{% block title%}QR{% endblock %}
+	{% block corps%}
+<div class="container"><br>
+<h1 class="text-info">Méthode de la factorisation QR</h1><hr>
+	<div class="row">	
+		<div class="col-md-offset-1 col-md-4">
+			<div class="panel panel-info">
+				<div class="panel-heading ">
+					<h1 class="text-center">Ordre de la matrice</h1>
+				</div>
+				<div class="panel-body">	
+					<form method="post" action="{{self.page}}">
+						<input type="number" name="ordre" name="ordre" min="1" max="10" required placeholder="ordre" class="form-control"><br>
+						<button type="submit" name="valider" value="valider" class="btn btn-primary pull-right">valider
+						</button>						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+</div>
+<!-- Footer -->
+        <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Mansour Baro DIOP</strong>
+                    </h4>
+                    <p>Etudiant en DIC 1<br>ECOLE SUPERIEURE POLYTECHNIQUE</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (+221) 77 816 04 09</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>diopman22@gmail.com</li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                        	<i class="fa fa-facebook fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+							<i class="fa fa-twitter fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-google-plus fa-fw fa-3x"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-instagram fa-fw fa-3x"></i>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Mansour 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery Version 1.11.1 -->
+    <script src="bootstrap/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 3000 //changes the speed
+    })
+    </script>
+
+    </body>
+</html>

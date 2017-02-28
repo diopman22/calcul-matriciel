@@ -1,0 +1,38 @@
+{% extends "page.html" %}
+{% block title%}Cholesky{% endblock %}
+    {% block content%}
+<div class="container"><br>
+<h1 class="text-info">Méthode de la résolution Ax=b par Cholesky</h1><hr>
+    <div class="row">   
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel panel-primary">
+                <div class="panel-heading ">
+                    <h1 class="text-center">Matrices A et b</h1>
+                </div>
+                <div class="panel-body">    
+                    <form method="post" action="{{url_for('cholesky')}}">
+                        <div class="row">
+                        <div class="col-md-offset-5 col-md-2">
+                        <h5 class="text-info">ordre de la matrice</h5>
+                        <input type="number"  name="ordre" id="ordre"min="1" max="9" required placeholder="ordre" class="form-control" onChange="doIt(this.value)" size="4">
+                        </div>
+                        </div><br>
+                        <div class="row">
+                            <div id="ici" class="col-md-offset-1 col-md-10">
+                                <div class="row"><h3 class="text-info">
+                                {% if s!=0 %}{% set i=1%}{% for j in s %}X{{i}}= {{j}}{% set i=i+1 %}<br>{% endfor %}{% else %}</h3> 
+                                 <div class="alert alert-danger">
+                                    <b>matrice non factorisable en cholesky</b>
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                                            
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    {% endblock %}

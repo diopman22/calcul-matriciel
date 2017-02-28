@@ -1,0 +1,19 @@
+.logo
+{
+	position: relative;
+	top:-50%;
+}
+body 
+{
+	padding-top: 70px;
+	//background-color:;
+  line-height: 26px;
+  font-family: "High Tower Text","Times New Roman", Times, serif;
+font-style:BOLD;
+font-size:20px; 
+ 
+}
+.connexion
+{
+	background-color:red;
+}
